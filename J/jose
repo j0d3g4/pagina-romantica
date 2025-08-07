@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Para María José 💖</title>
+  <link href="https://fonts.googleapis.com/css2?family=Herr+Von+Muellerhoff&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      background: linear-gradient(to top, #fff0f5, #ffe6f0);
+      font-family: 'Georgia', serif;
+      color: #800040;
+      padding: 20px;
+      overflow-x: hidden;
+    }
+
+    h1, h2 {
+      text-align: center;
+      color: #d1005d;
+    }
+
+    button {
+      background: #ff85a2;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 10px;
+      cursor: pointer;
+      margin: 10px auto;
+      display: block;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #e84c7b;
+      color: white;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .poema, .frases, .promesas, .solo-tu {
+      margin: 30px auto;
+      max-width: 700px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 0 10px #ffa3c2;
+      transition: 0.5s;
+    }
+
+    .corazones {
+      text-align: center;
+      font-size: 24px;
+      margin: 20px 0;
+    }
+
+    footer {
+      margin-top: 60px;
+      text-align: center;
+      font-family: 'Herr Von Muellerhoff', cursive;
+      font-size: 36px;
+      color: #660033;
+    }
+
+    /* Floating hearts */
+    .heart {
+      position: fixed;
+      width: 20px;
+      height: 20px;
+      background: red;
+      transform: rotate(45deg);
+      animation: float 6s linear infinite;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: red;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: -10px;
+      top: 0;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(100vh) rotate(45deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-10vh) rotate(45deg);
+        opacity: 0;
+      }
+    }
+
+    audio {
+      display: none;
+    }
+
+    .vineta {
+      text-align: center;
+      margin: 40px auto;
+    }
+
+    .vineta img {
+      max-width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 0 10px #cc5588;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🌹💖 Para María José 💖🌹</h1>
+  <h2>La dueña de mis pensamientos, mi inspiración y mi razón de sonreír 🌟</h2>
+
+  <!-- Viñeta del zorro -->
+  <div class="vineta">
+    <img src="A_digital_illustration_features_a_romantic_night-t.png" alt="Zorro mirando la estrella de María José">
+  </div>
+
+  <!-- Botón para mostrar poema -->
+  <button onclick="document.getElementById('poema').classList.toggle('hidden')">📜 Ver Poema</button>
+
+  <div id="poema" class="poema hidden">
+    <h3>💌 Poema para ti</h3>
+    <p>En tus ojos vi el cielo,</p>
+    <p>en tu sonrisa encontré paz,</p>
+    <p>María José, dulce destello,</p>
+    <p>mi amor por ti no tiene final.</p>
+    <br>
+    <p>Eres flor en primavera,</p>
+    <p>brisa suave en mi despertar,</p>
+    <p>eres mi poema favorito,</p>
+    <p>mi sueño hecho realidad.</p>
+  </div>
+
+  <!-- Frases una por una -->
+  <button onclick="mostrarFrase()">💬 Ver Frases "hay muchas espicha mas veces"</button>
+  <div class="frases" id="fraseBox">
+    <p id="fraseTexto"></p>
+  </div>
+
+  <!-- Corazones -->
+  <div class="corazones">
+    💖💖💖💖💖💖💖💖💖💖💖💖<br>
+    💖💖💖💖💖💖💖💖💖💖💖💖<br>
+    💖 Te amo, María José 💖<br>
+    💖💖💖💖💖💖💖💖💖💖💖💖<br>
+    💖💖💖💖💖💖💖💖💖💖💖💖
+  </div>
+
+  <!-- Promesas -->
+  <div class="promesas">
+    <h3>✨ Promesas desde el corazón</h3>
+    <p>💌 Te prometo cuidar de ti, como el sol cuida el amanecer.</p>
+    <p>💌 Te prometo escucharte, abrazarte, y estar para ti incluso en el silencio.</p>
+    <p>💌 Te prometo amarte con ternura, respeto y locura.</p>
+    <p>💌 Te prometo no dejar de enamorarme de ti... ni un solo día.</p>
+  </div>
+
+  <!-- Solo tú -->
+  <div class="solo-tu">
+    <h3>🌠 Solo tú…</h3>
+    <p>Eres la luz que ilumina mis días,</p>
+    <p>la calma que abraza mis tormentas,</p>
+    <p>el latido que acelera mi corazón,</p>
+    <p>y el amor que quiero para siempre.</p>
+    <br>
+    <p><em>💍 Si el amor fuera un viaje, contigo quiero recorrer el mundo entero.</em></p>
+    <p><em>❤️ Si la vida es un libro, tú eres mi capítulo favorito.</em></p>
+    <p><em>✨ Si tuviera un deseo, sería tenerte siempre a mi lado.</em></p>
+  </div>
+
+  <!-- Música romántica -->
+  <button onclick="document.getElementById('musica').play()">🎵 Reproducir Música Romántica</button>
+  <audio id="musica" src="https://www.bensound.com/bensound-music/bensound-love.mp3" loop></audio>
+
+  <!-- Corazones flotando -->
+  <script>
+    function crearCorazon() {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = Math.random() * 3 + 3 + "s";
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 6000);
+    }
+    setInterval(crearCorazon, 300);
+
+    const frases = [
+      "Eres la casualidad más bonita que llegó a mi vida sin buscarla.",
+      "Contigo aprendí que el amor no se busca, se encuentra... y se cuida.",
+      "María José, tu nombre es poesía, tu voz es melodía, y tu alma... mi alegría.",
+      "Si tuviera que elegir entre respirar o amarte... usaría mi último suspiro para decirte: Te amo.",
+      "Desde que llegaste, mi mundo tiene más colores, más risas y más razones para soñar."
+    ];
+    let indiceFrase = 0;
+    function mostrarFrase() {
+      const texto = document.getElementById("fraseTexto");
+      texto.textContent = frases[indiceFrase];
+      indiceFrase = (indiceFrase + 1) % frases.length;
+    }
+  </script>
+
+  <footer>
+    Pero no sé qué quieres: ¿que me quede y luche por ti, o que me vaya y te deje en paz?
+  </footer>
+
+</body>
+</html>
